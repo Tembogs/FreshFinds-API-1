@@ -3,7 +3,7 @@ import { Schema, model } from "mongoose";
 const userSchema = new Schema({
     name: {
         type: String,
-        required: true,
+        required: false,
     },
     email: {
         type: String,
@@ -26,8 +26,9 @@ const userSchema = new Schema({
 
      role : {
         type: String,
-        enum: ['admin', 'user'],
-        default: 'user',
+        required: true,
+        enum: ['buyer', 'seller'],
+        default: 'seller',
      },
      cart: [
         {

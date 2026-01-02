@@ -1,8 +1,8 @@
 import { register as registerService, login as loginService } from "../services/auth.services.js";
 
 export const register = async (req, res) => {
-    const { name, email, password, phoneNumber, address} = req.body;
-    const user = await registerService(name, email, password, phoneNumber, address);
+    const { email, password,} = req.body;
+    const user = await registerService( email, password,);
     if(!user) {
         return res.status(400).json({ message: "user not created"});
     }
