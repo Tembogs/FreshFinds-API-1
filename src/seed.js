@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
 import dotenv from "dotenv";
+import mongoose from "mongoose";
 import Product from "./models/product.js"; // adjust if your path differs
 
 dotenv.config();
@@ -35,9 +35,7 @@ const products = [
   },
 ];
 
-mongoose
-  .connect(process.env.MONGO_URL)
-  .then(async () => {
+mongoose.connect(process.env.MONGO_URL).then(async () => {
     console.log("Connected to DB ✅");
     await Product.deleteMany(); // optional: clears old products
     await Product.insertMany(products); // inserts demo data

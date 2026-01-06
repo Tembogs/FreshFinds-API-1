@@ -1,4 +1,4 @@
-import { getCart as getCartService, addToCart as addToCartService, updateCart as updateCartService, removeFromCart as removeFromCartService } from "../services/cart.service.js";
+import { getCart as getCartService, addToCart as addToCartService, updateCart as updateCartService, removeFromCart as removeFromCartService } from "../services/cart.services.js";
 
 export const getCart = async (req, res) => {
     const cart = await getCartService(req.user.id);

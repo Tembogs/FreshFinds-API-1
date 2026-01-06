@@ -4,18 +4,19 @@ import jwt from "jsonwebtoken";
 
 
 
-export const register = async (username, emailAddress, password, phoneNumber, address) => {
+export const register = async (username, emailAddress, password, phoneNumber, address, role) => {
     try {
-        console.log("Attempting to register user with:", { username, emailAddress, phoneNumber, address });
+        console.log("Attempting to register user with:", { username, emailAddress, phoneNumber, address, role });
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
         console.log("Password hashed successfully.");
         const user = new User({
-          name: username,
-       email: emailAddress,
+        name: username,
+        email: emailAddress,
         password: hashedPassword,
         phoneNumber,
-        address
+        address,
+        role
 
         });
         console.log("User object created:", user);
