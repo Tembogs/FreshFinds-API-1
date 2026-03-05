@@ -13,7 +13,7 @@ export const register = async (username, emailAddress, password, phoneNumber, ad
         console.log("Password hashed successfully.");
         const user = new User({
         name: username,
-        email: emailAddress,
+        emailAddress: emailAddress,
         password: hashedPassword,
         phoneNumber,
         address,

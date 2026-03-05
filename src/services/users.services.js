@@ -1,9 +1,9 @@
 import User from "../models/user.js";
 
-export const createNewUser = async ( name, email, password, phoneNumber, address, role) => {
+export const createNewUser = async ( name, emailAddress, password, phoneNumber, address, role) => {
   const newUser = new User ({
    name: name,
-   email: email,
+   emailAddress: emailAddress,
    password: password,
    phoneNumber: phoneNumber,
    address: address,
