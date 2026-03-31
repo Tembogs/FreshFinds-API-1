@@ -15,7 +15,21 @@ export const login = async (req, res) => {
     if(!data) {
         return res.status(400).json({message: "Invalid Credentials"});
     }
-    res.status(201).json(data);
+
+    const { token, user } = data;
+
+        // 🍪 Secure cookie
+        res.cookie("token", token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "strict",
+            maxAge: 60 * 60 * 1000 // 1 hour
+        });
+
+        res.status(200).json({
+            message: "Login successful",
+            user
+        });
 }
 
 

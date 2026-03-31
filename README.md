@@ -164,8 +164,6 @@ npm test
 Full Stack Developer
 
 ## Co-Author
-
-
 **OLUSEGUN OMOTILEWA TEMITOPE**
 Full-stack Developer
 
