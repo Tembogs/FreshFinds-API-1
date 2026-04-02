@@ -21,7 +21,7 @@ export const getAllUsers = async () => {
 
 // Get user by ID
 export const getUserById = async (id) => {
-  return await User.findById(id);
+  return await User.findById(id).select("-password");
 };
 
 // Get user by Email
